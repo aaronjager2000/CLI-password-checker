@@ -1,0 +1,36 @@
+username,password,notes
+john_doe,password123,Common weak password
+jane_smith,qwerty,Keyboard pattern
+admin_user,admin,Very common password
+test_user,123456,Sequential numbers
+demo_user,letmein,Common password
+user1,welcome,Common word
+user2,monkey,Common word
+user3,dragon,Common word
+user4,master,Common word
+user5,hello,Common word
+user6,freedom,Common word
+user7,whatever,Common word
+user8,qazwsx,Keyboard pattern
+user9,trustno1,Leet speak
+user10,654321,Reverse sequential
+user11,jordan23,Name with numbers
+user12,harley,Common name
+user13,shadow,Common word
+user14,superman,Common word
+user15,michael,Common name
+user16,football,Common word
+user17,jordan,Common name
+user18,hunter,Common word
+user19,ranger,Common word
+user20,daniel,Common name
+strong_user1,Kj9#mN2$pL8@vR5!,Strong password example
+strong_user2,Xy7&wQ4*zB1%nM6+,Strong password example
+strong_user3,Fg3@hJ9#kL2$mP5!,Strong password example
+strong_user4,Rt8&uI4*zO1%pA6+,Strong password example
+strong_user5,Vb7@cN2#dF5$gH8!,Strong password example
+medium_user1,MyPass123,Medium strength
+medium_user2,Secure2023,Medium strength
+medium_user3,GoodPass1,Medium strength
+medium_user4,Stronger99,Medium strength
+medium_user5,Better2024,Medium strength

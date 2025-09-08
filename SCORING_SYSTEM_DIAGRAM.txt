@@ -1,0 +1,86 @@
+PASSWORD STRENGTH SCORING SYSTEM DIAGRAM
+==========================================
+
+TOTAL SCORE: 0-100 POINTS
+├── ENTROPY SCORE (0-40 points)
+│   ├── Base Entropy (0-20 points)
+│   │   └── Shannon Entropy × 2 (capped at 20)
+│   ├── Character Set Bonus (0-10 points)
+│   │   ├── Lowercase: +2 points
+│   │   ├── Uppercase: +2 points
+│   │   ├── Digits: +2 points
+│   │   ├── Special: +2 points
+│   │   └── Space: +2 points
+│   ├── Length Bonus (0-10 points)
+│   │   └── Length × 0.5 (capped at 10)
+│   └── Pattern Penalties (0-15 points)
+│       ├── Sequential: -3 points
+│       ├── Repeated: -3 points
+│       ├── Keyboard: -3 points
+│       ├── Date: -3 points
+│       └── Phone: -3 points
+│
+├── DICTIONARY SCORE (0-30 points)
+│   ├── Common Passwords: -20 points
+│   ├── Dictionary Words: -3 points each
+│   ├── Leet Speak: -5 points
+│   ├── Keyboard Patterns: -4 points each
+│   ├── Sequential Patterns: -3 points each
+│   └── Personal Info: -2 points each
+│
+└── REUSE SCORE (0-30 points)
+    ├── Exact Duplicates: -5 points each (max -15)
+    ├── User Reuse: -10 points
+    └── Similar Passwords: Skipped for performance
+
+STRENGTH CATEGORIES:
+===================
+80-100: Very Strong (🔵)
+60-79:  Strong (🟢)
+40-59:  Medium (🟡)
+20-39:  Weak (🟠)
+0-19:   Very Weak (🔴)
+
+EXAMPLE CALCULATIONS:
+====================
+
+Password: "123456"
+├── Entropy: 2.585 bits → 5.17 points
+├── Character Sets: digits only → +2 points
+├── Length: 6 chars → +3 points
+├── Patterns: sequential, keyboard → -6 points
+├── Entropy Score: 4 points
+├── Dictionary: common password → -20 points
+├── Dictionary Score: 10 points
+├── Reuse: 3 duplicates → -15 points
+├── Reuse Score: 15 points
+└── TOTAL: 29 points (Weak)
+
+Password: "MyStr0ng!P@ssw0rd"
+├── Entropy: 3.32 bits → 6.64 points
+├── Character Sets: 4 sets → +8 points
+├── Length: 16 chars → +8 points
+├── Patterns: none → 0 points
+├── Entropy Score: 23 points
+├── Dictionary: no issues → 0 points
+├── Dictionary Score: 30 points
+├── Reuse: no duplicates → 0 points
+├── Reuse Score: 30 points
+└── TOTAL: 83 points (Very Strong)
+
+PERFORMANCE CHARACTERISTICS:
+============================
+Time Complexity: O(n) per password
+Space Complexity: O(m + d) total
+Where:
+- n = password length
+- m = total passwords
+- d = dictionary size
+
+OPTIMIZATION FEATURES:
+======================
+✅ Hash-based reuse detection (O(1) lookup)
+✅ Precomputed character sets
+✅ Single-pass pattern detection
+✅ Efficient dictionary lookups
+✅ Memory-efficient storage
